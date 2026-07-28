@@ -10,34 +10,34 @@ This plan outlines the implementation of the OpenCode Harness plugin as a minima
 
 **Objective:** Establish the basic project structure, package configuration, and development environment.
 
-- [ ] Task: Create package.json for @lannuttia/opencode-harness
-    - [ ] Initialize package with name `@lannuttia/opencode-harness`
-    - [ ] Add `@opencode-ai/plugin` v1.18.9 as dependency (already in .opencode/package.json)
-    - [ ] Add `opencode-workspace` as production dependency
-    - [ ] Add `opencode-conductor-plugin` as production dependency
-    - [ ] Configure package scripts (build, test, dev)
-    - [ ] Set package entry point to compiled output
+- [x] Task: Create package.json for @lannuttia/opencode-harness
+    - [x] Initialize package with name `@lannuttia/opencode-harness`
+    - [x] Add `@opencode-ai/plugin` v1.18.9 as dependency (already in .opencode/package.json)
+    - [x] Add `opencode-workspace` as production dependency
+    - [x] Add `opencode-conductor-plugin` as production dependency
+    - [x] Configure package scripts (build, test, dev)
+    - [x] Set package entry point to compiled output
 
-- [ ] Task: Create TypeScript configuration
-    - [ ] Create `tsconfig.json` with strict mode enabled
-    - [ ] Configure target to ES2022
-    - [ ] Set module resolution to bundler
-    - [ ] Configure output directory for compiled files
-    - [ ] Enable all strict type checking options
+- [x] Task: Create TypeScript configuration
+    - [x] Create `tsconfig.json` with strict mode enabled
+    - [x] Configure target to ES2022
+    - [x] Set module resolution to bundler
+    - [x] Configure output directory for compiled files
+    - [x] Enable all strict type checking options
 
-- [ ] Task: Create project directory structure
-    - [ ] Create `src/` directory for source code
-    - [ ] Create `tests/` directory for test files
-    - [ ] Create `dist/` or `lib/` directory for compiled output (via .gitignore)
-    - [ ] Create `.gitignore` with appropriate entries (node_modules, dist, etc.)
+- [x] Task: Create project directory structure
+    - [x] Create `src/` directory for source code
+    - [x] Create `tests/` directory for test files
+    - [x] Create `dist/` or `lib/` directory for compiled output (via .gitignore)
+    - [x] Create `.gitignore` with appropriate entries (node_modules, dist, etc.)
 
-- [ ] Task: Create README.md
-    - [ ] Document plugin purpose (wrapper for opencode-workspace and opencode-conductor-plugin)
-    - [ ] Add installation instructions
-    - [ ] Add usage instructions
-    - [ ] Note that this is a minimal wrapper with no custom functionality
+- [x] Task: Create README.md
+    - [x] Document plugin purpose (wrapper for opencode-workspace and opencode-conductor-plugin)
+    - [x] Add installation instructions
+    - [x] Add usage instructions
+    - [x] Note that this is a minimal wrapper with no custom functionality
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Project Setup and Configuration' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 1: Project Setup and Configuration' (Protocol in workflow.md)
 
 ---
 
