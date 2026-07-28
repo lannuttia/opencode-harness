@@ -1,50 +1,49 @@
-import { describe, expect, test, beforeEach } from "bun:test";
-import { activate, deactivate } from "../src/index";
-import type { ExtensionContext } from "@opencode-ai/plugin";
+import { describe, expect, test } from "bun:test";
+import HarnessPlugin from "../src/index";
+import type { PluginInput } from "@opencode-ai/plugin";
 
 describe("OpenCode Harness Plugin", () => {
-  let mockContext: ExtensionContext;
+  test("Plugin is defined and is a function", () => {
+    expect(HarnessPlugin).toBeDefined();
+    expect(typeof HarnessPlugin).toBe("function");
+  });
 
-  beforeEach(() => {
-    // Create a minimal mock context
-    mockContext = {
-      subscriptions: [],
-      extensionPath: "/mock/extension/path",
-      globalState: {
-        get: () => undefined,
-        update: () => Promise.resolve(),
+  test("Plugin loads successfully", async () => {
+    // Create a minimal mock input
+    const mockInput = {
+      client: {} as any,
+      project: {} as any,
+      directory: "/mock/directory",
+      worktree: "/mock/worktree",
+      experimental_workspace: {
+        register: () => {},
       },
-      workspaceState: {
-        get: () => undefined,
-        update: () => Promise.resolve(),
+      serverUrl: new URL("http://localhost:3000"),
+      $: {} as any,
+    } as PluginInput;
+
+    // Plugin should be callable and return a Promise
+    const result = HarnessPlugin(mockInput);
+    expect(result).toBeInstanceOf(Promise);
+  });
+
+  test("Plugin returns Hooks object", async () => {
+    const mockInput = {
+      client: {} as any,
+      project: {} as any,
+      directory: "/mock/directory",
+      worktree: "/mock/worktree",
+      experimental_workspace: {
+        register: () => {},
       },
-    } as unknown as ExtensionContext;
-  });
+      serverUrl: new URL("http://localhost:3000"),
+      $: {} as any,
+    } as PluginInput;
 
-  test("Plugin loads successfully", () => {
-    // The plugin module should export activate and deactivate functions
-    expect(activate).toBeDefined();
-    expect(deactivate).toBeDefined();
-    expect(typeof activate).toBe("function");
-    expect(typeof deactivate).toBe("function");
-  });
-
-  test("Plugin activates without errors", async () => {
-    // Activation should not throw
-    await expect(activate(mockContext)).resolves.toBeUndefined();
-  });
-
-  test("Plugin deactivates cleanly", async () => {
-    // Activate first
-    await activate(mockContext);
+    const hooks = await HarnessPlugin(mockInput);
     
-    // Deactivation should not throw
-    await expect(deactivate()).resolves.toBeUndefined();
-  });
-
-  test("Activation returns successfully", async () => {
-    const result = await activate(mockContext);
-    // Activate can return void or undefined
-    expect(result).toBeUndefined();
+    // Hooks should be an object
+    expect(hooks).toBeDefined();
+    expect(typeof hooks).toBe("object");
   });
 });

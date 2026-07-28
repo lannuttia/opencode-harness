@@ -52,25 +52,25 @@ This plan outlines the implementation of the OpenCode Harness plugin as a minima
     - [x] Write test: Wrapped plugins are accessible
     - [x] Write test: Plugin deactivates cleanly
 
-- [ ] Task: Implement plugin entry point
-    - [ ] Create `src/index.ts`
-    - [ ] Export plugin initialization function
-    - [ ] Set up plugin lifecycle hooks (activate, deactivate)
-    - [ ] Ensure TypeScript types are properly exported
+- [x] Task: Implement plugin entry point
+    - [x] Create `src/index.ts`
+    - [x] Export plugin initialization function
+    - [x] Set up plugin lifecycle hooks (activate, deactivate)
+    - [x] Ensure TypeScript types are properly exported
 
-- [ ] Task: Implement plugin wrapper logic
-    - [ ] Create `src/plugin.ts`
-    - [ ] Import `opencode-workspace` plugin
-    - [ ] Import `opencode-conductor-plugin` plugin
-    - [ ] Initialize both wrapped plugins in activate() hook
-    - [ ] Forward lifecycle events to wrapped plugins
-    - [ ] Handle cleanup in deactivate() hook
+- [x] Task: Implement plugin wrapper logic
+    - [x] Create `src/plugin.ts`
+    - [x] Import `opencode-workspace` plugin
+    - [x] Import `opencode-conductor-plugin` plugin
+    - [x] Initialize both wrapped plugins in activate() hook
+    - [x] Forward lifecycle events to wrapped plugins
+    - [x] Handle cleanup in deactivate() hook
 
-- [ ] Task: Create type definitions
-    - [ ] Create `src/types.ts`
-    - [ ] Define plugin configuration types (if any)
-    - [ ] Define wrapper plugin interface
-    - [ ] Ensure strict type safety throughout
+- [x] Task: Create type definitions
+    - [x] Create `src/types.ts`
+    - [x] Define plugin configuration types (if any)
+    - [x] Define wrapper plugin interface
+    - [x] Ensure strict type safety throughout
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Core Plugin Implementation' (Protocol in workflow.md)
 
