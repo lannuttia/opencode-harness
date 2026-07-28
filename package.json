@@ -1,0 +1,30 @@
+{
+  "name": "@lannuttia/opencode-harness",
+  "version": "0.1.0",
+  "description": "OpenCode Harness - An opinionated wrapper around opencode-workspace and opencode-conductor-plugin",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "bun test",
+    "dev": "tsc --watch"
+  },
+  "keywords": [
+    "opencode",
+    "plugin",
+    "harness",
+    "workspace",
+    "conductor"
+  ],
+  "author": "Alan Nutt",
+  "license": "MIT",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.18.9",
+    "opencode-workspace": "^0.1.0",
+    "opencode-conductor-plugin": "^0.1.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0",
+    "@types/node": "^20.0.0"
+  }
+}
