@@ -85,6 +85,11 @@ After this initial setup, all future releases will be automated via GitHub Actio
 
 Once the manual pre-release is complete, all future releases are fully automated via GitHub Actions (see `.github/workflows/ci.yml` and `.github/workflows/release.yml`):
 
+**Runtime Requirements:**
+- The release workflow uses **Node.js 24** for semantic-release compatibility
+- While Bun is the primary runtime for the package, semantic-release runs in Node.js during the automated release process
+- Local testing with `bunx semantic-release --dry-run` also requires Node.js to be installed
+
 **How it works:**
 1. Commits are merged to the `main` branch
 2. CI workflow runs (lint, typecheck, tests)

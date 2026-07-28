@@ -56,6 +56,7 @@
     - [ ] Add "release": "semantic-release" script
     - [ ] Verify "prepublishOnly": "bun run build" exists
     - [ ] Ensure "build": "tsc" script is present
+    - [ ] Note: Lint script was upgraded from placeholder to full ESLint implementation during this phase
 
 - [ ] Task: Test semantic-release locally (dry-run)
     - [ ] Run `bunx semantic-release --dry-run` to test configuration
