@@ -1,6 +1,3 @@
-#!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
 # Run TypeScript type check
 echo "Running TypeScript type check..."
 bunx tsc --noEmit
