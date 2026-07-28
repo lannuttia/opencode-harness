@@ -12,8 +12,8 @@
   },
   "scripts": {
     "test": "bun test",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "typecheck": "bunx tsc --noEmit",
     "prepare": "husky",
     "release": "semantic-release"
