@@ -63,13 +63,13 @@ Before automated releases can work, an initial pre-release must be published man
 
 1. **Bump to pre-release version:**
    ```bash
-   bun version prerelease
+   npm version prerelease --preid=alpha
    ```
-   This will update `package.json` to a pre-release version (e.g., `0.1.0` → `0.1.1-0`)
+   This will update `package.json` to a pre-release version (e.g., `0.1.0` → `0.1.1-alpha.0`)
 
 2. **Publish to NPM:**
    ```bash
-   bun publish
+   npm publish
    ```
    Follow the prompts to authenticate with NPM (you'll need an NPM account and login credentials)
 
