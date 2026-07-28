@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run test suite before pushing
+echo "Running test suite..."
+bun test
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Test suite failed!"
+  echo "Please fix failing tests before pushing."
+  echo "Run 'bun test' to see detailed test results."
+  exit 1
+fi
+
+echo "✓ All tests passed"

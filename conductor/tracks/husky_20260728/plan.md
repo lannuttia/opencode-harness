@@ -62,19 +62,19 @@
 
 ## Phase 4: Pre-Push Hook Implementation
 
-- [ ] Task: Write tests for pre-push validation
-    - [ ] Test: Verify test suite runs before push
-    - [ ] Test: Push is blocked when tests fail
-    - [ ] Test: Push succeeds when all tests pass
-    - [ ] Test: Error output shows which tests failed
+- [x] Task: Write tests for pre-push validation
+    - [x] Test: Verify test suite runs before push
+    - [x] Test: Push is blocked when tests fail
+    - [x] Test: Push succeeds when all tests pass
+    - [x] Test: Error output shows which tests failed
 
-- [ ] Task: Implement pre-push hook
-    - [ ] Create `.husky/pre-push` file
-    - [ ] Add test execution command (`bun test`)
-    - [ ] Make script executable (`chmod +x`)
-    - [ ] Add error handling and output formatting
-    - [ ] Test hook with failing tests
-    - [ ] Test hook with passing tests
+- [x] Task: Implement pre-push hook
+    - [x] Create `.husky/pre-push` file
+    - [x] Add test execution command (`bun test`)
+    - [x] Make script executable (`chmod +x`)
+    - [x] Add error handling and output formatting
+    - [x] Test hook with failing tests
+    - [x] Test hook with passing tests
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 4: Pre-Push Hook Implementation' (Protocol in workflow.md)
 

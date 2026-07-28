@@ -64,13 +64,29 @@ describe("Git Hooks", () => {
   });
 
   describe("Pre-Push Hook", () => {
-    test("pre-push hook file should exist after implementation", () => {
+    test("pre-push hook file exists", () => {
       const prePushPath = join(huskyDir, "pre-push");
-      // This will fail until we implement the hook in Phase 4
-      // For now, we'll skip this test
-      if (existsSync(prePushPath)) {
-        expect(existsSync(prePushPath)).toBe(true);
-      }
+      expect(existsSync(prePushPath)).toBe(true);
+    });
+
+    test("pre-push hook contains test command", () => {
+      const prePushPath = join(huskyDir, "pre-push");
+      const content = readFileSync(prePushPath, "utf-8");
+      expect(content).toContain("bun test");
+    });
+
+    test("pre-push hook is executable", () => {
+      const prePushPath = join(huskyDir, "pre-push");
+      const stats = require("fs").statSync(prePushPath);
+      expect(stats.mode & 0o100).toBeGreaterThan(0);
+    });
+
+    test("test command is available", () => {
+      // Verify that the test script exists in package.json
+      const packageJsonPath = join(projectRoot, "package.json");
+      const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf-8"));
+      expect(packageJson.scripts.test).toBeDefined();
+      expect(packageJson.scripts.test).toBe("bun test");
     });
   });
 });
