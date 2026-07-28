@@ -4,6 +4,12 @@
   "description": "Minimal wrapper around opencode-conductor-plugin for context-driven development",
   "main": "src/index.ts",
   "type": "module",
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "test": "bun test",
     "typecheck": "bunx tsc --noEmit",
