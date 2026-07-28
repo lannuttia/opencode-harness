@@ -55,6 +55,47 @@ To verify the plugin is installed correctly:
 # Try: /conductor:status or /conductor:setup
 ```
 
+## Publishing (For Maintainers)
+
+### Manual Pre-release Setup
+
+Before automated releases can work, an initial pre-release must be published manually to configure NPM trusted publisher authentication:
+
+1. **Bump to pre-release version:**
+   ```bash
+   bun version prerelease
+   ```
+   This will update `package.json` to a pre-release version (e.g., `0.1.0` → `0.1.1-0`)
+
+2. **Publish to NPM:**
+   ```bash
+   bun publish
+   ```
+   Follow the prompts to authenticate with NPM (you'll need an NPM account and login credentials)
+
+3. **Configure NPM Trusted Publisher:**
+   - Visit your package page on npmjs.com
+   - Navigate to Settings → Publishing Access
+   - Add GitHub Actions as a trusted publisher
+   - Configure: `owner/repo: lannuttia/opencode-harness`, `workflow: release.yml`
+
+After this initial setup, all future releases will be automated via GitHub Actions and semantic-release.
+
+### Troubleshooting Pre-release
+
+**Authentication fails:**
+- Ensure you're logged into NPM: `npm login`
+- Check that you have publish permissions for `@lannuttia` scope
+- Verify your NPM account has 2FA configured if required
+
+**Package already exists:**
+- The package name `@lannuttia/opencode-harness` must be unique
+- If taken, update `name` in `package.json` before publishing
+
+**Build errors:**
+- This package has no build step (Bun handles TypeScript natively)
+- Ensure `src/` directory exists and contains `index.ts`
+
 ## Usage
 
 Once installed, all Conductor commands are available:
