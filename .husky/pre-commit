@@ -1,1 +1,16 @@
-npm test
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run TypeScript type check
+echo "Running TypeScript type check..."
+bunx tsc --noEmit
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ TypeScript type check failed!"
+  echo "Please fix the type errors before committing."
+  echo "Run 'bunx tsc --noEmit' to see detailed errors."
+  exit 1
+fi
+
+echo "✓ TypeScript type check passed"

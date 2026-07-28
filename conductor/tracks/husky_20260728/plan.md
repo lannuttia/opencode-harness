@@ -19,19 +19,19 @@
 
 ## Phase 2: Pre-Commit Hook Implementation
 
-- [ ] Task: Write tests for TypeScript validation behavior
-    - [ ] Test: Verify tsc --noEmit is executed
-    - [ ] Test: Verify commit is blocked when type errors exist
-    - [ ] Test: Verify commit succeeds when no type errors
-    - [ ] Test: Verify error output is clear and actionable
+- [x] Task: Write tests for TypeScript validation behavior
+    - [x] Test: Verify tsc --noEmit is executed
+    - [x] Test: Verify commit is blocked when type errors exist
+    - [x] Test: Verify commit succeeds when no type errors
+    - [x] Test: Verify error output is clear and actionable
 
-- [ ] Task: Implement pre-commit hook
-    - [ ] Create `.husky/pre-commit` file
-    - [ ] Add TypeScript type check command (`bunx tsc --noEmit`)
-    - [ ] Make script executable (`chmod +x`)
-    - [ ] Add error handling and clear messaging
-    - [ ] Test hook with intentional type error
-    - [ ] Test hook with clean code
+- [x] Task: Implement pre-commit hook
+    - [x] Create `.husky/pre-commit` file
+    - [x] Add TypeScript type check command (`bunx tsc --noEmit`)
+    - [x] Make script executable (`chmod +x`)
+    - [x] Add error handling and clear messaging
+    - [x] Test hook with intentional type error
+    - [x] Test hook with clean code
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Pre-Commit Hook Implementation' (Protocol in workflow.md)
 
