@@ -83,7 +83,7 @@ After this initial setup, all future releases will be automated via GitHub Actio
 
 ### Automated Releases
 
-Once the manual pre-release is complete, all future releases are fully automated:
+Once the manual pre-release is complete, all future releases are fully automated via GitHub Actions (see `.github/workflows/ci.yml` and `.github/workflows/release.yml`):
 
 **How it works:**
 1. Commits are merged to the `main` branch
