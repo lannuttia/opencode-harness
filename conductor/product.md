@@ -1,11 +1,11 @@
 # Product Guide: OpenCode Harness
 
 ## Initial Concept
-An opinionated wrapper around opencode-conductor-plugin and opencode-workspace, providing a harness to enable context-driven development leveraging Git workspaces for workstream isolation.
+An opinionated wrapper around opencode-conductor-plugin, providing a harness to enable context-driven development.
 
 ## Product Vision
 
-OpenCode Harness is a comprehensive framework designed to streamline context-driven development workflows for individual developers using OpenCode. By integrating the Conductor methodology with Git workspace isolation, it provides a powerful development environment that maintains clear separation of concerns across multiple workstreams while preserving full project context.
+OpenCode Harness is a minimal plugin wrapper designed to provide easy access to the Conductor methodology for individual developers using OpenCode. By wrapping opencode-conductor-plugin, it simplifies installation and provides a single entry point for context-driven development workflows.
 
 ## Target Users
 
@@ -30,11 +30,6 @@ OpenCode Harness is a comprehensive framework designed to streamline context-dri
 
 ## Key Features
 
-### Git Workspace Integration
-- Automatic creation and management of Git worktrees for each development track
-- Isolated file systems per workspace preventing cross-contamination
-- Seamless switching between workstreams without losing uncommitted work
-
 ### Conductor Methodology Integration
 - Opinionated workflow enforcement via opencode-conductor-plugin
 - Automatic generation of implementation plans with phased task breakdowns
@@ -49,22 +44,20 @@ OpenCode Harness is a comprehensive framework designed to streamline context-dri
 - Track-based development with detailed specifications
 
 ### Developer Experience
-- Single command to create new isolated workstreams
-- Automatic context loading when switching workspaces
-- Built-in best practices and guardrails
-- Clear visibility into all active tracks and their status
+- Simple installation as a local plugin
+- Access to all Conductor methodology features
+- Context-driven development workflow
+- Track-based planning and implementation
 
 ## Product Scope
 
-The OpenCode Harness is a **comprehensive framework** that includes:
+The OpenCode Harness is a **minimal plugin wrapper** that includes:
 
-- Complete project scaffolding and initialization
-- Multiple pre-configured code style guides for common languages
-- Workflow templates with customization options
-- Git workspace lifecycle management
-- Integration with OpenCode's native plugin ecosystem
-- Documentation generation and maintenance
-- State management and recovery mechanisms
+- Simple wrapper around opencode-conductor-plugin
+- No custom functionality - pure pass-through design
+- Single installation point for Conductor methodology
+- All Conductor commands available (/conductor:setup, /conductor:newTrack, /conductor:implement, etc.)
+- Local plugin support for easy development and testing
 
 ## Success Criteria
 

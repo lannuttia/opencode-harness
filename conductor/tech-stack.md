@@ -22,17 +22,18 @@
 
 ## Runtime Environment
 
-### Node.js
+### Bun
 
-**Purpose:** JavaScript runtime for executing the plugin and CLI tools
+**Purpose:** JavaScript runtime for executing the plugin with native TypeScript support
 
 **Rationale:**
-- Required by OpenCode plugin architecture
-- Excellent ecosystem for CLI development
-- Cross-platform compatibility (Linux, macOS, Windows)
-- Strong async/await support for Git operations
+- Native TypeScript execution without compilation
+- Significantly faster than Node.js
+- Compatible with OpenCode plugin architecture
+- Excellent performance for plugin operations
+- Built-in test runner
 
-**Version:** Node.js 18.x or later (LTS recommended)
+**Version:** Bun 1.0.0 or later
 
 ## Package Management
 
@@ -79,13 +80,12 @@
    - Core plugin SDK for OpenCode integration
    - Provides plugin lifecycle hooks and API access
 
-2. **opencode-conductor-plugin**
+2. **opencode-conductor-plugin (^1.32.0)**
    - Implements the Conductor methodology
    - Provides track management and workflow orchestration
+   - Only wrapped plugin in current implementation
 
-3. **opencode-workspace**
-   - Git workspace (worktree) management
-   - Branch isolation and context switching
+Note: **opencode-workspace** was considered but not included in the initial implementation. It is a profile/bundle rather than a single plugin and was excluded from the wrapper scope.
 
 ### Development Dependencies (Recommended)
 
@@ -121,9 +121,8 @@ The OpenCode Harness wraps and orchestrates existing OpenCode plugins:
 
 ```
 OpenCode Harness (This Project)
-├── Wraps: opencode-conductor-plugin
-├── Wraps: opencode-workspace
-└── Extends: @opencode-ai/plugin SDK
+├── Wraps: opencode-conductor-plugin (^1.32.0)
+└── Uses: @opencode-ai/plugin SDK (1.18.9)
 ```
 
 **Design Principles:**
