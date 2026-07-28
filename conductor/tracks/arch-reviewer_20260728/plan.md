@@ -10,11 +10,11 @@
 - [x] Identify how the existing reviewer is invoked and how results are returned
 
 ### Task 2: Design Architecture Reviewer Framework
-- [ ] Design the specialized reviewer architecture supporting multiple subagents
-- [ ] Define interfaces for specialized reviewers (Product Alignment, future reviewers)
-- [ ] Design result aggregation mechanism for unified reporting
-- [ ] Design severity categorization system (critical, warning, info)
-- [ ] Create architecture diagram showing integration with existing review command
+- [x] Design the specialized reviewer architecture supporting multiple subagents
+- [x] Define interfaces for specialized reviewers (Product Alignment, future reviewers)
+- [x] Design result aggregation mechanism for unified reporting
+- [x] Design severity categorization system (critical, warning, info)
+- [x] Create architecture diagram showing integration with existing review command
 
 ### Task 3: Design Product Alignment Reviewer Specifications
 - [ ] Define specific criteria for product alignment review
