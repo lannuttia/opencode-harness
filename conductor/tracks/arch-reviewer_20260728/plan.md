@@ -17,13 +17,13 @@
 - [x] Create architecture diagram showing integration with existing review command
 
 ### Task 3: Design Product Alignment Reviewer Specifications
-- [ ] Define specific criteria for product alignment review
-- [ ] Specify which sections of `product.md` to analyze (vision, users, scope, non-goals)
-- [ ] Design prompt/instructions for Product Alignment Reviewer subagent
-- [ ] Define expected output format from the subagent
-- [ ] Identify edge cases and error scenarios
+- [x] Define specific criteria for product alignment review
+- [x] Specify which sections of `product.md` to analyze (vision, users, scope, non-goals)
+- [x] Design prompt/instructions for Product Alignment Reviewer subagent
+- [x] Define expected output format from the subagent
+- [x] Identify edge cases and error scenarios
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 1: Research and Design' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 1: Research and Design' (Protocol in workflow.md)
 
 ## Phase 2: Core Framework Implementation
 
