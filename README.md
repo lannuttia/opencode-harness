@@ -88,7 +88,8 @@ Once the manual pre-release is complete, all future releases are fully automated
 **Runtime Requirements:**
 - The release workflow uses **Node.js 24** for semantic-release compatibility
 - While Bun is the primary runtime for the package, semantic-release runs in Node.js during the automated release process
-- Local testing with `bunx semantic-release --dry-run` also requires Node.js to be installed
+- Local testing with `bunx semantic-release --dry-run` requires Node.js 24.10.0 or later (or 22.14.0+)
+- **No build step is required** - Bun handles TypeScript natively, so the package is published with source TypeScript files
 
 **How it works:**
 1. Commits are merged to the `main` branch
