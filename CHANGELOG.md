@@ -1,3 +1,5 @@
+## 1.0.0 (2026-07-28)
+
 # Changelog
 
 All notable changes to the OpenCode Harness will be documented in this file.
