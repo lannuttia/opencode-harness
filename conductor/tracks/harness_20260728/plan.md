@@ -45,12 +45,12 @@ This plan outlines the implementation of the OpenCode Harness plugin as a minima
 
 **Objective:** Implement the minimal plugin that wraps both target plugins.
 
-- [ ] Task: Write tests for plugin initialization
-    - [ ] Create `tests/plugin.test.ts`
-    - [ ] Write test: Plugin loads successfully
-    - [ ] Write test: Plugin activates without errors
-    - [ ] Write test: Wrapped plugins are accessible
-    - [ ] Write test: Plugin deactivates cleanly
+- [x] Task: Write tests for plugin initialization
+    - [x] Create `tests/plugin.test.ts`
+    - [x] Write test: Plugin loads successfully
+    - [x] Write test: Plugin activates without errors
+    - [x] Write test: Wrapped plugins are accessible
+    - [x] Write test: Plugin deactivates cleanly
 
 - [ ] Task: Implement plugin entry point
     - [ ] Create `src/index.ts`
