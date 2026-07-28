@@ -2,7 +2,9 @@
 
 ## Overview
 
-This plan outlines the implementation of the OpenCode Harness plugin as a minimal wrapper around `opencode-workspace` and `opencode-conductor-plugin`.
+This plan outlines the implementation of the OpenCode Harness plugin as a minimal wrapper around `opencode-conductor-plugin`.
+
+**Note**: `opencode-workspace` was excluded from the scope during implementation as it is a profile/bundle rather than a single plugin.
 
 ---
 
@@ -163,3 +165,11 @@ Before marking this track as complete, verify:
 - **Versioning**: Initial version will be 0.1.0 (or 1.0.0 if ready for production use)
 - **Publishing**: Publishing to npm registry is NOT part of this track
 - **Dependencies**: Will install exact versions of wrapped plugins to ensure compatibility
+
+---
+
+## Phase: Review Fixes
+
+**Objective:** Address code review findings to ensure full compliance with project standards.
+
+- [x] Task: Apply review suggestions e3f1045
