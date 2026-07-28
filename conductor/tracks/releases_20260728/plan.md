@@ -200,3 +200,7 @@
     - [ ] Note the Node.js + Bun hybrid approach rationale
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 7: Cleanup and Final Validation' (Protocol in workflow.md)
+
+## Phase: Review Fixes
+
+- [x] Task: Apply review suggestions bdf451e
