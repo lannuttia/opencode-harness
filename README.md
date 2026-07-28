@@ -81,6 +81,63 @@ Before automated releases can work, an initial pre-release must be published man
 
 After this initial setup, all future releases will be automated via GitHub Actions and semantic-release.
 
+### Automated Releases
+
+Once the manual pre-release is complete, all future releases are fully automated:
+
+**How it works:**
+1. Commits are merged to the `main` branch
+2. CI workflow runs (lint, typecheck, tests)
+3. If CI passes, the Release workflow triggers automatically
+4. semantic-release analyzes conventional commits since the last release
+5. Version is bumped based on commit types:
+   - `feat:` → minor version (e.g., 1.0.0 → 1.1.0)
+   - `fix:` → patch version (e.g., 1.0.0 → 1.0.1)
+   - `BREAKING CHANGE:` or `!` → major version (e.g., 1.0.0 → 2.0.0)
+6. CHANGELOG.md is generated/updated
+7. Git tag and GitHub Release are created
+8. Package is published to NPM with provenance attestation
+9. Version bump and CHANGELOG are committed back to main
+
+**Commit message format:**
+Follow the Conventional Commits specification:
+```
+<type>(<scope>): <subject>
+
+<body>
+
+<footer>
+```
+
+**Supported types:**
+- `feat`: New feature (triggers minor release)
+- `fix`: Bug fix (triggers patch release)
+- `perf`: Performance improvement (triggers patch release)
+- `conductor`: Conductor-specific changes (triggers patch release)
+- `docs`, `style`, `refactor`, `test`, `build`, `ci`, `chore`: No release
+
+**Examples:**
+```
+feat(cli): add support for custom config paths
+
+Adds --config flag to specify a custom configuration file path.
+
+Closes #42
+```
+
+```
+fix: prevent crash when package.json is missing
+
+Added validation to check for package.json before reading it.
+```
+
+```
+feat!: remove deprecated workspace API
+
+BREAKING CHANGE: The workspace.legacy() method has been removed.
+Migrate to workspace.create() instead.
+```
+
 ### Troubleshooting Pre-release
 
 **Authentication fails:**
