@@ -1,15 +1,14 @@
 # OpenCode Harness
 
-An opinionated wrapper around `opencode-workspace` and `opencode-conductor-plugin` for context-driven development with Git workspace isolation.
+An opinionated wrapper around `opencode-conductor-plugin` for context-driven development.
 
 ## Overview
 
-OpenCode Harness is a minimal wrapper plugin that brings together two powerful OpenCode plugins:
+OpenCode Harness is a minimal wrapper plugin that provides easy access to the Conductor methodology:
 
-- **opencode-workspace**: Git workspace (worktree) management for isolated development tracks
 - **opencode-conductor-plugin**: Conductor methodology implementation for structured, phased development
 
-This plugin provides no custom functionality - it simply wraps and exposes the functionality of both underlying plugins through a single installation point.
+This plugin provides no custom functionality - it simply wraps and exposes the functionality of the conductor plugin through a single installation point.
 
 ## Installation
 
@@ -17,69 +16,90 @@ This plugin provides no custom functionality - it simply wraps and exposes the f
 
 - OpenCode environment
 - Node.js 18.x or later
-- Git 2.25+ (for worktree support)
-- Bun (recommended package manager)
+- Bun (recommended for development)
 
-### Install the plugin
+### Install as a local plugin
 
-1. Add the harness to your OpenCode plugin dependencies:
+For development or local use:
 
-```bash
-cd .opencode
-bun add @lannuttia/opencode-harness
-```
+1. Clone or download this repository
 
-2. Update your `.opencode/opencode.json` to register the plugin:
+2. Update your `.opencode/opencode.json` to register the local plugin:
 
 ```json
 {
-  "plugins": [
-    "@lannuttia/opencode-harness"
+  "plugin": [
+    "/path/to/opencode-harness"
   ]
 }
 ```
 
-3. Restart OpenCode or reload plugins to activate the harness.
+Or for a plugin in the parent directory of your `.opencode` folder:
 
-## Usage
+```json
+{
+  "plugin": [
+    ".."
+  ]
+}
+```
 
-Once installed, all commands from the wrapped plugins are available:
+3. Restart OpenCode to activate the harness.
 
-### From opencode-workspace
-
-(Commands will be documented by the opencode-workspace plugin)
-
-### From opencode-conductor-plugin
-
-(Commands will be documented by the opencode-conductor-plugin plugin)
-
-## Verification
+### Verification
 
 To verify the plugin is installed correctly:
 
-1. Check that the plugin appears in OpenCode's plugin list
-2. Ensure there are no errors in the OpenCode console
-3. Test basic commands from either wrapped plugin
+```bash
+# The conductor commands should be available
+# Try: /conductor:status or /conductor:setup
+```
+
+## Usage
+
+Once installed, all Conductor commands are available:
+
+### Conductor Commands
+
+- `/conductor:setup` - Initialize the conductor/ directory and project "Constitution"
+- `/conductor:newTrack "desc"` - Start a new feature/bug Track with spec and plan generation
+- `/conductor:implement` - Start implementing the next pending task in the current track
+- `/conductor:status` - Get a high-level overview of project progress and active tracks
+- `/conductor:revert` - Interactively select a task, phase, or track to undo via Git
+
+For detailed documentation, see the [opencode-conductor-plugin documentation](https://www.npmjs.com/package/opencode-conductor-plugin).
 
 ## What This Plugin Does
 
-- Initializes `opencode-workspace` during activation
-- Initializes `opencode-conductor-plugin` during activation
-- Forwards all plugin lifecycle events to both wrapped plugins
-- Provides a single installation point for both plugins
+- Wraps and re-exports `opencode-conductor-plugin`
+- Provides a single installation point for the Conductor methodology
+- No custom logic - pure pass-through wrapper
 
 ## What This Plugin Does NOT Do
 
 - Add custom commands or functionality
-- Modify the behavior of wrapped plugins
-- Provide configuration options beyond what the wrapped plugins offer
+- Modify the behavior of the wrapped plugin
+- Provide configuration options beyond what the conductor plugin offers
 
-## Wrapped Plugin Versions
+## Troubleshooting
 
-This harness wraps the following plugins:
+**Plugin doesn't load:**
+- Check that the path in `.opencode/opencode.json` is correct
+- Ensure `package.json` exists in the plugin directory
+- Restart OpenCode after configuration changes
 
-- `opencode-workspace`: github:kdcokenny/opencode-workspace (latest from GitHub)
+**Conductor commands not available:**
+- Verify the plugin loaded without errors
+- Check OpenCode console for error messages
+- Ensure `opencode-conductor-plugin` is installed in dependencies
+
+## Wrapped Plugin Version
+
+This harness wraps:
+
 - `opencode-conductor-plugin`: ^1.32.0
+
+Note: `opencode-workspace` is not included as it's a profile/bundle rather than a single plugin.
 
 ## License
 

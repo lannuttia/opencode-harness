@@ -1,21 +1,32 @@
 {
   "name": "@lannuttia/opencode-harness",
   "version": "0.1.0",
-  "description": "OpenCode Harness - An opinionated wrapper around opencode-workspace and opencode-conductor-plugin",
+  "description": "Minimal wrapper around opencode-conductor-plugin for context-driven development",
   "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "test": "bun test"
+    "test": "bun test",
+    "typecheck": "bunx tsc --noEmit"
   },
   "keywords": [
     "opencode",
     "plugin",
     "harness",
-    "workspace",
-    "conductor"
+    "conductor",
+    "context-driven",
+    "development",
+    "methodology"
   ],
   "author": "Alan Nutt",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lannuttia/opencode-harness.git"
+  },
+  "bugs": {
+    "url": "https://github.com/lannuttia/opencode-harness/issues"
+  },
+  "homepage": "https://github.com/lannuttia/opencode-harness#readme",
   "dependencies": {
     "@opencode-ai/plugin": "1.18.9",
     "opencode-workspace": "github:kdcokenny/opencode-workspace",
