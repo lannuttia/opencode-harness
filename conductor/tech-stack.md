@@ -95,6 +95,28 @@ Note: **opencode-workspace** was considered but not included in the initial impl
 - **prettier** - Code formatting (if following style guides)
 - **eslint** - Linting (if following style guides)
 
+### Code Quality and Git Hooks
+
+1. **husky (^9.1.7)**
+   - Git hooks manager for enforcing code quality standards
+   - Enables pre-commit, commit-msg, and pre-push hooks
+   - Configured to work with Bun runtime
+
+2. **@commitlint/cli (^21.2.1)**
+   - Commit message linter
+   - Enforces Conventional Commits specification
+   - Integrated with commit-msg hook
+
+3. **@commitlint/config-conventional (^21.2.0)**
+   - Conventional Commits ruleset for commitlint
+   - Supports standard commit types plus custom 'conductor' type
+   - Ensures consistent commit history
+
+**Purpose:** These tools enforce code quality standards automatically through Git hooks:
+- Pre-commit: Validates TypeScript type checking
+- Commit-msg: Ensures Conventional Commits format
+- Pre-push: Runs full test suite before pushing
+
 ## Git Integration
 
 ### Git (System Requirement)
