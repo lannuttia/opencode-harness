@@ -38,13 +38,28 @@ describe("Git Hooks", () => {
   });
 
   describe("Commit Message Hook", () => {
-    test("commit-msg hook file should exist after implementation", () => {
+    test("commit-msg hook file exists", () => {
       const commitMsgPath = join(huskyDir, "commit-msg");
-      // This will fail until we implement the hook in Phase 3
-      // For now, we'll skip this test
-      if (existsSync(commitMsgPath)) {
-        expect(existsSync(commitMsgPath)).toBe(true);
-      }
+      expect(existsSync(commitMsgPath)).toBe(true);
+    });
+
+    test("commit-msg hook contains commitlint command", () => {
+      const commitMsgPath = join(huskyDir, "commit-msg");
+      const content = readFileSync(commitMsgPath, "utf-8");
+      expect(content).toContain("bunx commitlint --edit");
+    });
+
+    test("commit-msg hook is executable", () => {
+      const commitMsgPath = join(huskyDir, "commit-msg");
+      const stats = require("fs").statSync(commitMsgPath);
+      expect(stats.mode & 0o100).toBeGreaterThan(0);
+    });
+
+    test("commitlint config file exists", () => {
+      const configPath1 = join(projectRoot, "commitlint.config.js");
+      const configPath2 = join(projectRoot, ".commitlintrc.json");
+      const hasConfig = existsSync(configPath1) || existsSync(configPath2);
+      expect(hasConfig).toBe(true);
     });
   });
 

@@ -37,26 +37,26 @@
 
 ## Phase 3: Commit Message Validation
 
-- [ ] Task: Write tests for commit message validation
-    - [ ] Test: Valid conventional commit is accepted
-    - [ ] Test: Invalid commit message is rejected
-    - [ ] Test: All supported types (feat, fix, docs, etc.) work
-    - [ ] Test: Custom 'conductor' type is accepted
-    - [ ] Test: Error message provides helpful feedback
+- [x] Task: Write tests for commit message validation
+    - [x] Test: Valid conventional commit is accepted
+    - [x] Test: Invalid commit message is rejected
+    - [x] Test: All supported types (feat, fix, docs, etc.) work
+    - [x] Test: Custom 'conductor' type is accepted
+    - [x] Test: Error message provides helpful feedback
 
-- [ ] Task: Configure commitlint
-    - [ ] Create `commitlint.config.js` or `.commitlintrc.json`
-    - [ ] Extend `@commitlint/config-conventional`
-    - [ ] Add custom 'conductor' type to allowed types
-    - [ ] Configure scope rules (optional)
-    - [ ] Test configuration with sample commits
+- [x] Task: Configure commitlint
+    - [x] Create `commitlint.config.js` or `.commitlintrc.json`
+    - [x] Extend `@commitlint/config-conventional`
+    - [x] Add custom 'conductor' type to allowed types
+    - [x] Configure scope rules (optional)
+    - [x] Test configuration with sample commits
 
-- [ ] Task: Implement commit-msg hook
-    - [ ] Create `.husky/commit-msg` file
-    - [ ] Add commitlint command (`bunx commitlint --edit $1`)
-    - [ ] Make script executable (`chmod +x`)
-    - [ ] Test hook with invalid commit message
-    - [ ] Test hook with valid commit message
+- [x] Task: Implement commit-msg hook
+    - [x] Create `.husky/commit-msg` file
+    - [x] Add commitlint command (`bunx commitlint --edit $1`)
+    - [x] Make script executable (`chmod +x`)
+    - [x] Test hook with invalid commit message
+    - [x] Test hook with valid commit message
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 3: Commit Message Validation' (Protocol in workflow.md)
 
