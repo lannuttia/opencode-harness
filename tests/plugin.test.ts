@@ -11,15 +11,15 @@ describe("OpenCode Harness Plugin", () => {
   test("Plugin loads successfully", async () => {
     // Create a minimal mock input
     const mockInput = {
-      client: {} as any,
-      project: {} as any,
+      client: {} as Record<string, unknown>,
+      project: {} as Record<string, unknown>,
       directory: "/mock/directory",
       worktree: "/mock/worktree",
       experimental_workspace: {
         register: () => {},
       },
       serverUrl: new URL("http://localhost:3000"),
-      $: {} as any,
+      $: {} as Record<string, unknown>,
     } as PluginInput;
 
     // Plugin should be callable and return a Promise
@@ -29,15 +29,15 @@ describe("OpenCode Harness Plugin", () => {
 
   test("Plugin returns Hooks object", async () => {
     const mockInput = {
-      client: {} as any,
-      project: {} as any,
+      client: {} as Record<string, unknown>,
+      project: {} as Record<string, unknown>,
       directory: "/mock/directory",
       worktree: "/mock/worktree",
       experimental_workspace: {
         register: () => {},
       },
       serverUrl: new URL("http://localhost:3000"),
-      $: {} as any,
+      $: {} as Record<string, unknown>,
     } as PluginInput;
 
     const hooks = await HarnessPlugin(mockInput);
