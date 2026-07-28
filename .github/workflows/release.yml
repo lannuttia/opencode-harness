@@ -29,7 +29,9 @@ jobs:
         with:
           fetch-depth: 0
           ref: ${{ github.event.workflow_run.head_sha }}
-          # Disable credential persistence to prevent token exposure in subsequent steps
+          # Disable credential persistence to prevent token exposure in subsequent steps.
+          # This is a security best practice when using OIDC tokens in later steps.
+          # The GITHUB_TOKEN from semantic-release provides all necessary permissions.
           persist-credentials: false
       
       - name: Setup Node.js
