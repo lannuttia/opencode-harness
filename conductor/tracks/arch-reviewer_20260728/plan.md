@@ -64,22 +64,22 @@
 - [x] Run tests and verify reviewer identifies misalignments correctly
 
 ### Task 8: Implement Subagent Execution Logic
-- [ ] Write tests for subagent execution (parallel execution, result collection, error handling)
-- [ ] Implement subagent invocation using OpenCode task/subagent system
-- [ ] Implement parallel execution of multiple reviewers
-- [ ] Implement timeout and error handling for subagent failures
-- [ ] Implement result collection from completed subagents
-- [ ] Run tests and verify subagents execute correctly
+- [x] Write tests for subagent execution (parallel execution, result collection, error handling)
+- [x] Implement subagent invocation using OpenCode task/subagent system
+- [x] Implement parallel execution of multiple reviewers
+- [x] Implement timeout and error handling for subagent failures
+- [x] Implement result collection from completed subagents
+- [x] Run tests and verify subagents execute correctly
 
 ### Task 9: Implement Critical Issue Blocking
-- [ ] Write tests for blocking logic (critical issues block, warnings don't block)
-- [ ] Implement severity detection and classification
-- [ ] Implement review completion blocking when critical issues exist
-- [ ] Implement user notification for blocking issues
-- [ ] Implement mechanism to re-run review after fixes
-- [ ] Run tests and verify blocking behavior
+- [x] Write tests for blocking logic (critical issues block, warnings don't block)
+- [x] Implement severity detection and classification
+- [x] Implement review completion blocking when critical issues exist
+- [x] Implement user notification for blocking issues
+- [x] Implement mechanism to re-run review after fixes
+- [x] Run tests and verify blocking behavior
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 3: Product Alignment Reviewer Implementation' (Protocol in workflow.md)
+- [~] Task: Conductor - User Manual Verification 'Phase 3: Product Alignment Reviewer Implementation' (Protocol in workflow.md)
 
 ## Phase 4: Integration with /conductor:review
 
