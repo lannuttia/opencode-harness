@@ -20,8 +20,8 @@
   "license": "MIT",
   "dependencies": {
     "@opencode-ai/plugin": "1.18.9",
-    "opencode-workspace": "^0.1.0",
-    "opencode-conductor-plugin": "^0.1.0"
+    "opencode-workspace": "github:kdcokenny/opencode-workspace",
+    "opencode-conductor-plugin": "^1.32.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

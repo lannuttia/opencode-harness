@@ -78,8 +78,8 @@ To verify the plugin is installed correctly:
 
 This harness wraps the following plugins:
 
-- `opencode-workspace`: ^0.1.0
-- `opencode-conductor-plugin`: ^0.1.0
+- `opencode-workspace`: github:kdcokenny/opencode-workspace (latest from GitHub)
+- `opencode-conductor-plugin`: ^1.32.0
 
 ## License
 
