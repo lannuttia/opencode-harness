@@ -13,7 +13,8 @@
   "scripts": {
     "test": "bun test",
     "typecheck": "bunx tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "release": "semantic-release"
   },
   "keywords": [
     "opencode",
