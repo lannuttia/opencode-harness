@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [~] **Track: Implement the harness plugin under @lannuttia/opencode-harness wrapping opencode-workspace and opencode-conductor-plugin**
+- [x] **Track: Implement the harness plugin under @lannuttia/opencode-harness wrapping opencode-workspace and opencode-conductor-plugin**
   *Link: [./tracks/harness_20260728/](./tracks/harness_20260728/)*
