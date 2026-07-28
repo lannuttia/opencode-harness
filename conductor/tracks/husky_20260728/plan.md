@@ -2,12 +2,12 @@
 
 ## Phase 1: Setup and Dependencies
 
-- [ ] Task: Install required dependencies
-    - [ ] Add `husky` as devDependency
-    - [ ] Add `@commitlint/cli` as devDependency
-    - [ ] Add `@commitlint/config-conventional` as devDependency
-    - [ ] Run `bun install` to install packages
-    - [ ] Verify installation in package.json
+- [x] Task: Install required dependencies
+    - [x] Add `husky` as devDependency
+    - [x] Add `@commitlint/cli` as devDependency
+    - [x] Add `@commitlint/config-conventional` as devDependency
+    - [x] Run `bun install` to install packages
+    - [x] Verify installation in package.json
 
 - [ ] Task: Initialize Husky
     - [ ] Run `bunx husky init` to create .husky directory
