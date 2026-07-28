@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Automated Releases and CHANGELOG Management**
+- [~] **Track: Automated Releases and CHANGELOG Management**
 *Link: [./tracks/releases_20260728/](./tracks/releases_20260728/)*
