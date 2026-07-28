@@ -12,7 +12,8 @@
   },
   "scripts": {
     "test": "bun test",
-    "lint": "echo 'No linter configured yet' && exit 0",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
     "typecheck": "bunx tsc --noEmit",
     "prepare": "husky",
     "release": "semantic-release"
@@ -51,6 +52,9 @@
     "@semantic-release/npm": "^13.1.5",
     "@semantic-release/release-notes-generator": "^14.1.1",
     "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^8.65.0",
+    "@typescript-eslint/parser": "^8.65.0",
+    "eslint": "^10.8.0",
     "husky": "^9.1.7",
     "semantic-release": "^25.0.8",
     "typescript": "^5.0.0"
