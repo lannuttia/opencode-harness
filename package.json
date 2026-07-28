@@ -12,6 +12,7 @@
   },
   "scripts": {
     "test": "bun test",
+    "lint": "echo 'No linter configured yet' && exit 0",
     "typecheck": "bunx tsc --noEmit",
     "prepare": "husky",
     "release": "semantic-release"
