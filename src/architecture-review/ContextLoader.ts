@@ -159,10 +159,12 @@ export class ContextLoader {
     let sectionEnd = lines.length;
 
     for (let i = sectionStart + 1; i < lines.length; i++) {
-      const match = lines[i]?.match(/^#{1,6}\s/);
+      const currentLine = lines[i];
+      if (!currentLine) continue;
+      
+      const match = currentLine.match(/^#{1,6}\s/);
       if (match) {
-        const currentHeading = lines[i];
-        const currentMatch = currentHeading?.match(/^#+/);
+        const currentMatch = currentLine.match(/^#+/);
         const currentLevel = currentMatch ? currentMatch[0].length : 0;
         if (currentLevel <= startLevel) {
           sectionEnd = i;

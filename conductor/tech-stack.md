@@ -81,7 +81,7 @@
    - Pinned to version 1.0.223 for exact type compatibility with opencode-conductor-plugin
    - This specific version is required due to type system incompatibilities between versions
    - Provides plugin lifecycle hooks and API access
-   - Note: Version appears lower than expected due to OpenCode SDK versioning scheme
+   - Note: Pinned to this specific version for type compatibility with opencode-conductor-plugin v1.32.0
 
 2. **opencode-conductor-plugin (^1.32.0)**
    - Implements the Conductor methodology

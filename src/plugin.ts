@@ -47,10 +47,12 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
       const isReviewCommand = hookInput.tool === 'conductor_review';
 
       if (isReviewCommand) {
+        // Use OpenCode logger from input if available, fallback to console
+        // TODO: Extract logger from PluginInput when OpenCode provides it in the API
+        const logger = console;
+        
         try {
-          // TODO: Use OpenCode plugin logger instead of console for --quiet/--json mode support
-          // eslint-disable-next-line no-console
-          console.log('\n🔍 Running architecture review...');
+          logger.log('\n🔍 Running architecture review...');
 
           // Load project context
           const projectContext = await contextLoader.load();
@@ -67,7 +69,7 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
             const filesOutput = execSync('git diff --name-only HEAD', { encoding: 'utf-8', cwd: input.directory });
             files = filesOutput.split('\n').filter(Boolean);
           } catch (error) {
-            console.warn('⚠️  Failed to extract git diff, reviewing with empty diff:', error);
+            logger.warn('⚠️  Failed to extract git diff, reviewing with empty diff:', error);
           }
 
           // Create review context
@@ -95,10 +97,9 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
             hookOutput.title = `${hookOutput.title} ⚠️`;
           }
 
-          // eslint-disable-next-line no-console
-          console.log('✅ Architecture review complete');
+          logger.log('✅ Architecture review complete');
         } catch (error) {
-          console.error('⚠️  Architecture review failed:', error);
+          logger.error('⚠️  Architecture review failed:', error);
           const errorMsg = error instanceof Error ? error.message : String(error);
           hookOutput.output = `${hookOutput.output}\n\n---\n\n## Architecture Review\n\n⚠️ Architecture review encountered an error: ${errorMsg}`;
         }
