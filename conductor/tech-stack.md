@@ -76,8 +76,9 @@
 
 ### Production Dependencies
 
-1. **@opencode-ai/plugin (v1.18.9)**
+1. **@opencode-ai/plugin (v1.0.223)**
    - Core plugin SDK for OpenCode integration
+   - Version aligned with opencode-conductor-plugin for type compatibility
    - Provides plugin lifecycle hooks and API access
 
 2. **opencode-conductor-plugin (^1.32.0)**
