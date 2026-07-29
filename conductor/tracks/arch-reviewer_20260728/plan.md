@@ -84,21 +84,21 @@
 ## Phase 4: Integration with /conductor:review
 
 ### Task 10: Extend /conductor:review Command
-- [ ] Write tests for integration (automatic execution, backward compatibility, combined results)
-- [ ] Modify `/conductor:review` to invoke architecture reviewer automatically
-- [ ] Integrate architecture reviewer results into existing review output
-- [ ] Ensure backward compatibility with existing review functionality
-- [ ] Implement combined result reporting
-- [ ] Run tests and verify integration works correctly
+- [x] Write tests for integration (automatic execution, backward compatibility, combined results)
+- [x] Modify `/conductor:review` to invoke architecture reviewer automatically
+- [x] Integrate architecture reviewer results into existing review output
+- [x] Ensure backward compatibility with existing review functionality
+- [x] Implement combined result reporting
+- [x] Run tests and verify integration works correctly
 
 ### Task 11: Implement Progress Indicators
-- [ ] Write tests for progress display (initialization, subagent execution, aggregation)
-- [ ] Implement progress indicator for architecture review execution
-- [ ] Implement status messages for each subagent (starting, running, completed)
-- [ ] Implement final aggregation status message
-- [ ] Run tests and verify progress is displayed correctly
+- [x] Write tests for progress display (initialization, subagent execution, aggregation)
+- [x] Implement progress indicator for architecture review execution
+- [x] Implement status messages for each subagent (starting, running, completed)
+- [x] Implement final aggregation status message
+- [x] Run tests and verify progress is displayed correctly
 
-- [ ] Task: Conductor - User Manual Verification 'Phase 4: Integration with /conductor:review' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 4: Integration with /conductor:review' (Protocol in workflow.md)
 
 ## Phase 5: Testing and Documentation
 

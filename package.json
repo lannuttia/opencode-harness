@@ -4,6 +4,9 @@
   "description": "Minimal wrapper around opencode-conductor-plugin for context-driven development",
   "main": "src/index.ts",
   "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
   "files": [
     "src"
   ],
@@ -38,7 +41,7 @@
   },
   "homepage": "https://github.com/lannuttia/opencode-harness#readme",
   "dependencies": {
-    "@opencode-ai/plugin": "1.18.9",
+    "@opencode-ai/plugin": "1.0.223",
     "opencode-workspace": "github:kdcokenny/opencode-workspace",
     "opencode-conductor-plugin": "^1.32.0"
   },
