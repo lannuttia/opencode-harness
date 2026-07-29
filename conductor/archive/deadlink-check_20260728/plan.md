@@ -117,3 +117,13 @@
     - [x] .gitignore already properly configured (no changes needed)
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 5: Final Integration and Validation' (Protocol in workflow.md)
+
+## Phase 6: Code Review and Specification Alignment
+
+- [x] Task: Apply code review suggestions and align specification with implementation 819d34e
+    - [x] Updated spec.md to reflect markdown-link-check instead of lychee
+    - [x] Expanded pre-commit hook to check HTML files in addition to markdown
+    - [x] Documented line number limitation in docs/link-checking.md
+    - [x] Fixed documentation references (npmjs.com note)
+    - [x] All tests passing (32/32)
+    - [x] TypeScript compilation clean
