@@ -1,8 +1,0 @@
-{
-  "track_id": "deadlink-check_20260728",
-  "type": "feature",
-  "status": "new",
-  "created_at": "2026-07-28T23:50:56Z",
-  "updated_at": "2026-07-28T23:50:56Z",
-  "description": "Add a pre-commit hook that checks for dead links"
-}
