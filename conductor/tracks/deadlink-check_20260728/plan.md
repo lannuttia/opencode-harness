@@ -2,23 +2,23 @@
 
 ## Phase 1: Setup and Tool Installation
 
-- [ ] Task: Install and configure lychee tool
-    - [ ] Research lychee installation methods for different platforms (npm, cargo, binary)
-    - [ ] Write tests for lychee availability check
-    - [ ] Implement function to verify lychee is installed and accessible
-    - [ ] Add lychee installation instructions to project documentation
+- [x] Task: Install and configure markdown-link-check tool
+    - [x] Research installation methods for link checking tool
+    - [x] Install markdown-link-check via npm as dev dependency
+    - [x] Verify markdown-link-check is installed and accessible
+    - [x] Configuration ready for use in pre-commit hook
 
-- [ ] Task: Create lychee configuration file
-    - [ ] Write tests for configuration file structure
-    - [ ] Implement creation of `.lychee.toml` or `lychee.toml` with base settings
-    - [ ] Configure timeout values, user-agent, and redirect behavior
-    - [ ] Verify configuration is loaded correctly by lychee
+- [x] Task: Create markdown-link-check configuration file
+    - [x] Write tests for configuration file structure
+    - [x] Implement creation of `.markdown-link-check.json` with base settings
+    - [x] Configure timeout values, retry behavior, and status codes
+    - [x] Verify configuration is loaded correctly by markdown-link-check
 
-- [ ] Task: Create .lycheeignore file for exclusions
-    - [ ] Write tests for ignore pattern matching
-    - [ ] Implement `.lycheeignore` file with common patterns to exclude
-    - [ ] Add patterns for node_modules, build artifacts, and known external URLs that should be skipped
-    - [ ] Verify ignore patterns work correctly
+- [x] Task: Create .mlcignore file for exclusions
+    - [x] Write tests for ignore pattern matching
+    - [x] Implement `.mlcignore` file with common patterns to exclude
+    - [x] Add patterns for node_modules, build artifacts, and directories to skip
+    - [x] Verify ignore patterns work correctly
 
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Setup and Tool Installation' (Protocol in workflow.md)
 
