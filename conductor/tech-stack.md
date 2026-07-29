@@ -112,8 +112,13 @@ Note: **opencode-workspace** was considered but not included in the initial impl
    - Supports standard commit types plus custom 'conductor' type
    - Ensures consistent commit history
 
+4. **markdown-link-check (^3.15.0)**
+   - Link validation tool for markdown files
+   - Checks both local file paths and external URLs
+   - Integrated with pre-commit hook
+
 **Purpose:** These tools enforce code quality standards automatically through Git hooks:
-- Pre-commit: Validates TypeScript type checking
+- Pre-commit: Validates TypeScript type checking and checks for dead links in markdown files
 - Commit-msg: Ensures Conventional Commits format
 - Pre-push: Runs full test suite before pushing
 
