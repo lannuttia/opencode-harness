@@ -49,7 +49,8 @@
       "@semantic-release/git",
       {
         "assets": ["CHANGELOG.md", "package.json", "bun.lock"],
-        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}"
+        "message": "chore(release): ${nextRelease.version} [skip ci]\n\n${nextRelease.notes}",
+        "gitCommitOptions": ["--no-verify"]
       }
     ],
     "@semantic-release/github"
