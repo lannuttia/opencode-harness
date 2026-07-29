@@ -19,18 +19,18 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
   const conductorHooks = await ConductorPlugin(input);
 
   // Import architecture review components dynamically to avoid circular dependencies
-  const { ArchitectureReviewer } = await import('./architecture-review/ArchitectureReviewer');
-  const { ContextLoader } = await import('./architecture-review/ContextLoader');
-  const { ReportGenerator } = await import('./architecture-review/ReportGenerator');
-  const { ProductAlignmentReviewer } = await import('./reviewers/ProductAlignmentReviewer');
+  const architectureReviewerModule = await import('./architecture-review/ArchitectureReviewer');
+  const contextLoaderModule = await import('./architecture-review/ContextLoader');
+  const reportGeneratorModule = await import('./architecture-review/ReportGenerator');
+  const productAlignmentReviewerModule = await import('./reviewers/ProductAlignmentReviewer');
 
   // Initialize architecture review components
-  const architectureReviewer = new ArchitectureReviewer();
-  const contextLoader = new ContextLoader(input.directory);
-  const reportGenerator = new ReportGenerator();
+  const architectureReviewer = new architectureReviewerModule.ArchitectureReviewer();
+  const contextLoader = new contextLoaderModule.ContextLoader(input.directory);
+  const reportGenerator = new reportGeneratorModule.ReportGenerator();
 
   // Register specialized reviewers
-  architectureReviewer.registerReviewer(new ProductAlignmentReviewer());
+  architectureReviewer.registerReviewer(new productAlignmentReviewerModule.ProductAlignmentReviewer());
 
   // Return hooks with architecture review integration
   return {
@@ -49,6 +49,7 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
       if (isReviewCommand) {
         try {
           // TODO: Use OpenCode plugin logger instead of console for --quiet/--json mode support
+          // eslint-disable-next-line no-console
           console.log('\n🔍 Running architecture review...');
 
           // Load project context
@@ -94,6 +95,7 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
             hookOutput.title = `${hookOutput.title} ⚠️`;
           }
 
+          // eslint-disable-next-line no-console
           console.log('✅ Architecture review complete');
         } catch (error) {
           console.error('⚠️  Architecture review failed:', error);

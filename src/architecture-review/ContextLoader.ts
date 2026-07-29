@@ -114,7 +114,7 @@ export class ContextLoader {
           guides[language] = content;
         }
       }
-    } catch (error) {
+    } catch {
       // Directory doesn't exist or is not accessible - return empty guides
       // This is not an error, as code_styleguides is optional
     }

@@ -7,7 +7,11 @@ import { ArchitectureReviewer } from '../../src/architecture-review/Architecture
 import { ContextLoader } from '../../src/architecture-review/ContextLoader';
 import { ReportGenerator } from '../../src/architecture-review/ReportGenerator';
 import { ProductAlignmentReviewer } from '../../src/reviewers/ProductAlignmentReviewer';
-import type { ReviewContext } from '../../src/architecture-review/types';
+import type { 
+  ReviewContext,
+  ReviewFindings,
+  SpecializedReviewer,
+} from '../../src/architecture-review/types';
 
 describe('Architecture Review Integration', () => {
   let architectureReviewer: ArchitectureReviewer;
@@ -249,13 +253,13 @@ describe('Architecture Review Integration', () => {
       const failingReviewer = {
         name: 'Failing Reviewer',
         description: 'Always fails',
-        async review(): Promise<any> {
+        async review(): Promise<ReviewFindings> {
           throw new Error('Reviewer failed');
         },
       };
 
       // Register both failing and working reviewers
-      architectureReviewer.registerReviewer(failingReviewer as any);
+      architectureReviewer.registerReviewer(failingReviewer as SpecializedReviewer);
       architectureReviewer.registerReviewer(new ProductAlignmentReviewer());
 
       // Load context

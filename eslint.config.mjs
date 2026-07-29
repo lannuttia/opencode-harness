@@ -41,6 +41,11 @@ export default [
           format: ['camelCase', 'UPPER_CASE']
         },
         {
+          selector: 'variable',
+          modifiers: ['exported'],
+          format: ['camelCase', 'UPPER_CASE', 'PascalCase']
+        },
+        {
           selector: 'function',
           format: ['camelCase']
         },
