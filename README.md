@@ -197,6 +197,51 @@ For detailed documentation, see the [opencode-conductor-plugin documentation](ht
 - Check OpenCode console for error messages
 - Ensure `opencode-conductor-plugin` is installed in dependencies
 
+## Code Quality
+
+This project enforces code quality standards through automated Git hooks:
+
+### Pre-Commit Checks
+
+Before each commit, the following checks run automatically:
+
+1. **TypeScript Type Checking:** Validates all TypeScript code is type-safe
+2. **Link Checking:** Verifies all links in markdown files are valid
+
+If either check fails, the commit is blocked until issues are resolved.
+
+### Link Checking
+
+All markdown files are automatically checked for broken links before commits:
+
+- ✓ Validates local file paths exist
+- ✓ Checks external URLs return valid status codes
+- ✓ Follows HTTP redirects
+- ✓ Retries on transient failures
+
+**Manual link checking:**
+```bash
+# Check a single file
+bunx markdown-link-check --config .markdown-link-check.json README.md
+
+# Check all markdown files
+find . -name "*.md" -not -path "*/node_modules/*" \
+  -exec bunx markdown-link-check --config .markdown-link-check.json {} \;
+```
+
+**Configuration:** `.markdown-link-check.json`
+
+For detailed documentation, see [docs/link-checking.md](./docs/link-checking.md).
+
+### Bypassing Hooks
+
+**Emergency use only:**
+```bash
+git commit --no-verify -m "message"
+```
+
+Only use `--no-verify` for work-in-progress commits or when hooks are temporarily failing. See [docs/hooks.md](./docs/hooks.md) for details.
+
 ## Wrapped Plugin Version
 
 This harness wraps:
