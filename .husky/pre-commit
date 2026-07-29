@@ -16,8 +16,8 @@ echo "✓ TypeScript type check passed"
 echo ""
 echo "Checking links in markdown files..."
 
-# Find all markdown files, excluding ignored directories
-MD_FILES=$(find . -name "*.md" \
+# Find all markdown and HTML files, excluding ignored directories
+CHECK_FILES=$(find . \( -name "*.md" -o -name "*.html" \) \
   -not -path "*/node_modules/*" \
   -not -path "*/.git/*" \
   -not -path "*/dist/*" \
@@ -25,9 +25,9 @@ MD_FILES=$(find . -name "*.md" \
   -not -path "*/conductor/archive/*" \
   2>/dev/null)
 
-if [ -n "$MD_FILES" ]; then
-  # Run markdown-link-check on all markdown files
-  bunx markdown-link-check --config .markdown-link-check.json --quiet $MD_FILES
+if [ -n "$CHECK_FILES" ]; then
+  # Run markdown-link-check on all markdown and HTML files
+  bunx markdown-link-check --config .markdown-link-check.json --quiet $CHECK_FILES
   
   if [ $? -ne 0 ]; then
     echo ""
