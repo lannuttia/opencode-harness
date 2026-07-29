@@ -1,6 +1,6 @@
 # Link Checking Documentation
 
-This project uses [markdown-link-check](https://github.com/tcort/markdown-link-check) to validate all links in markdown files before commits. The link checker runs automatically as part of the pre-commit hook to ensure documentation remains accurate and free of broken links.
+This project uses [markdown-link-check](https://github.com/tcort/markdown-link-check) to validate all links in markdown and HTML files before commits. The link checker runs automatically as part of the pre-commit hook to ensure documentation remains accurate and free of broken links.
 
 ## Overview
 
@@ -8,7 +8,7 @@ The link checker validates:
 - **Local file references:** Ensures relative and absolute file paths exist
 - **External URLs:** Verifies HTTP/HTTPS links return valid status codes (200-226)
 - **Markdown links:** Checks `[text](url)` and reference-style `[text][ref]` links
-- **HTML links:** Validates `<a href="url">` and `<img src="url">` in markdown files
+- **HTML links:** Validates `<a href="url">` and `<img src="url">` in markdown and HTML files
 
 ## How It Works
 
@@ -16,8 +16,8 @@ The link checker validates:
 
 The link checker runs automatically before each commit:
 
-1. Finds all `.md` files in the repository (excluding ignored directories)
-2. Checks every link in each markdown file
+1. Finds all `.md` and `.html` files in the repository (excluding ignored directories)
+2. Checks every link in each markdown and HTML file
 3. Reports any dead or broken links
 4. Blocks the commit if dead links are found
 
@@ -105,10 +105,10 @@ bunx markdown-link-check --config .markdown-link-check.json README.md
 bunx markdown-link-check --config .markdown-link-check.json README.md docs/hooks.md
 ```
 
-### Check All Markdown Files
+### Check All Markdown and HTML Files
 
 ```bash
-find . -name "*.md" \
+find . \( -name "*.md" -o -name "*.html" \) \
   -not -path "*/node_modules/*" \
   -not -path "*/.git/*" \
   -exec bunx markdown-link-check --config .markdown-link-check.json {} \;
@@ -127,6 +127,20 @@ bunx markdown-link-check --quiet --config .markdown-link-check.json README.md
 ```
 
 ## Common Issues and Solutions
+
+### Issue: Pre-commit hook not executing
+
+**Problem:** Hook doesn't run or shows permission denied.
+
+**Solution:** Ensure the hook is executable:
+```bash
+chmod +x .husky/pre-commit
+```
+
+If the issue persists, verify husky is properly installed:
+```bash
+bun install
+```
 
 ### Issue: Link is valid but marked as dead
 
@@ -229,9 +243,9 @@ The link checker can be integrated into CI/CD pipelines:
 
 ```yaml
 # Example GitHub Actions workflow
-- name: Check markdown links
+- name: Check markdown and HTML links
   run: |
-    find . -name "*.md" \
+    find . \( -name "*.md" -o -name "*.html" \) \
       -not -path "*/node_modules/*" \
       -not -path "*/.git/*" \
       -exec bunx markdown-link-check --config .markdown-link-check.json {} \;

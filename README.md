@@ -206,13 +206,13 @@ This project enforces code quality standards through automated Git hooks:
 Before each commit, the following checks run automatically:
 
 1. **TypeScript Type Checking:** Validates all TypeScript code is type-safe
-2. **Link Checking:** Verifies all links in markdown files are valid
+2. **Link Checking:** Verifies all links in markdown and HTML files are valid
 
 If either check fails, the commit is blocked until issues are resolved.
 
 ### Link Checking
 
-All markdown files are automatically checked for broken links before commits:
+All markdown and HTML files are automatically checked for broken links before commits:
 
 - ✓ Validates local file paths exist
 - ✓ Checks external URLs return valid status codes
@@ -224,8 +224,8 @@ All markdown files are automatically checked for broken links before commits:
 # Check a single file
 bunx markdown-link-check --config .markdown-link-check.json README.md
 
-# Check all markdown files
-find . -name "*.md" -not -path "*/node_modules/*" \
+# Check all markdown and HTML files
+find . \( -name "*.md" -o -name "*.html" \) -not -path "*/node_modules/*" \
   -exec bunx markdown-link-check --config .markdown-link-check.json {} \;
 ```
 
