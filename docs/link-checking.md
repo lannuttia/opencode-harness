@@ -277,6 +277,6 @@ Performance depends on:
 ## Further Reading
 
 - [markdown-link-check on GitHub](https://github.com/tcort/markdown-link-check)
-- markdown-link-check on npm (Note: npmjs.com links ignored due to Cloudflare protection)
+- markdown-link-check npm package information (Note: npmjs.com links are excluded from automated checks due to Cloudflare protection. Search "markdown-link-check" on npmjs.com manually if needed.)
 - [Pre-Commit Hooks Documentation](./hooks.md)
 - [Conductor Workflow](../conductor/workflow.md)
