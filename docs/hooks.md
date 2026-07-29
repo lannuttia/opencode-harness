@@ -237,4 +237,4 @@ If hooks are taking significantly longer:
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [commitlint](https://commitlint.js.org/)
 - [TypeScript](https://www.typescriptlang.org/)
-- [Conductor Workflow](./conductor/workflow.md)
+- [Conductor Workflow](../conductor/workflow.md)

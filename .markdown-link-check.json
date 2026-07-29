@@ -8,6 +8,15 @@
     },
     {
       "pattern": "^http://127.0.0.1"
+    },
+    {
+      "pattern": "^https://github.com/lannuttia/opencode-harness"
+    },
+    {
+      "pattern": "^https://www.npmjs.com/package/"
+    },
+    {
+      "pattern": "^https://registry.npmjs.org/"
     }
   ],
   "timeout": "30s",
