@@ -34,12 +34,15 @@ export class ProductAlignmentReviewer implements SpecializedReviewer {
     const product = context.projectContext.product;
     const diff = context.changes.diff || '';
 
-    // Run all validation checks
-    findings.push(...await this.checkVisionAlignment(product, diff));
-    findings.push(...await this.checkTargetUsers(product, diff));
-    findings.push(...await this.checkCoreProblems(product, diff));
-    findings.push(...await this.checkScope(product, diff));
-    findings.push(...await this.checkNonGoals(product, diff));
+    // Run all validation checks in parallel for better performance
+    const checks = await Promise.all([
+      this.checkVisionAlignment(product, diff),
+      this.checkTargetUsers(product, diff),
+      this.checkCoreProblems(product, diff),
+      this.checkScope(product, diff),
+      this.checkNonGoals(product, diff),
+    ]);
+    findings.push(...checks.flat());
 
     return {
       reviewer: this.name,

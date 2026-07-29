@@ -44,9 +44,7 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
       }
 
       // Check if this is the review command
-      const isReviewCommand = hookInput.tool === 'conductor_review' || 
-                             hookInput.tool.endsWith('review') ||
-                             hookInput.tool.includes('conductor') && hookInput.tool.includes('review');
+      const isReviewCommand = hookInput.tool === 'conductor_review';
 
       if (isReviewCommand) {
         try {

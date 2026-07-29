@@ -68,12 +68,12 @@ export interface ReviewScope {
  * Product definition from product.md
  */
 export interface ProductDefinition {
-  vision: string;
-  targetUsers: string;
-  coreProblems: string;
-  keyFeatures: string;
-  scope: string;
-  nonGoals: string;
+  readonly vision: string;
+  readonly targetUsers: string;
+  readonly coreProblems: string;
+  readonly keyFeatures: string;
+  readonly scope: string;
+  readonly nonGoals: string;
 }
 
 /**
