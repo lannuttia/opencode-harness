@@ -62,7 +62,7 @@
 **Purpose:** Integration platform for extending OpenCode functionality
 
 **Components:**
-- `@opencode-ai/plugin` (v1.18.9) - Core plugin SDK
+- `@opencode-ai/plugin` (v1.0.223) - Core plugin SDK
 - `opencode-conductor-plugin` - Conductor methodology implementation
 - `opencode-workspace` - Workspace management capabilities
 
@@ -76,9 +76,12 @@
 
 ### Production Dependencies
 
-1. **@opencode-ai/plugin (v1.18.9)**
+1. **@opencode-ai/plugin (1.0.223)**
    - Core plugin SDK for OpenCode integration
+   - Pinned to version 1.0.223 for exact type compatibility with opencode-conductor-plugin
+   - This specific version is required due to type system incompatibilities between versions
    - Provides plugin lifecycle hooks and API access
+   - Note: Pinned to this specific version for type compatibility with opencode-conductor-plugin v1.32.0
 
 2. **opencode-conductor-plugin (^1.32.0)**
    - Implements the Conductor methodology
@@ -149,7 +152,7 @@ The OpenCode Harness wraps and orchestrates existing OpenCode plugins:
 ```
 OpenCode Harness (This Project)
 ├── Wraps: opencode-conductor-plugin (^1.32.0)
-└── Uses: @opencode-ai/plugin SDK (1.18.9)
+└── Uses: @opencode-ai/plugin SDK (1.0.223)
 ```
 
 **Design Principles:**

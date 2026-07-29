@@ -43,6 +43,13 @@ OpenCode Harness is a minimal plugin wrapper designed to provide easy access to 
 - Automated workflow configuration
 - Track-based development with detailed specifications
 
+### Architecture Review Integration
+- Automated architectural analysis integrated into /conductor:review
+- Product alignment validation against product.md specifications
+- Critical issue detection for scope violations and non-goal implementations
+- Extensible framework supporting multiple specialized reviewers
+- Performance-optimized parallel execution
+
 ### Developer Experience
 - Simple installation as a local plugin
 - Access to all Conductor methodology features
@@ -54,9 +61,10 @@ OpenCode Harness is a minimal plugin wrapper designed to provide easy access to 
 The OpenCode Harness is a **minimal plugin wrapper** that includes:
 
 - Simple wrapper around opencode-conductor-plugin
-- No custom functionality - pure pass-through design
+- Extends conductor plugin with architecture review capabilities while maintaining minimal wrapper philosophy
 - Single installation point for Conductor methodology
 - All Conductor commands available (/conductor:setup, /conductor:newTrack, /conductor:implement, etc.)
+- Architecture review system with Product Alignment validator
 - Local plugin support for easy development and testing
 
 ## Success Criteria
