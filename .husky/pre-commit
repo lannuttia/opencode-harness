@@ -11,3 +11,28 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "✓ TypeScript type check passed"
+
+# Run link checker on markdown and HTML files
+echo ""
+echo "Checking links in markdown and HTML files..."
+
+# Find and check all markdown and HTML files, excluding ignored directories
+# Using -exec with + to batch files for better performance
+find . \( -name "*.md" -o -name "*.html" \) \
+  -not -path "*/node_modules/*" \
+  -not -path "*/.git/*" \
+  -not -path "*/dist/*" \
+  -not -path "*/build/*" \
+  -not -path "*/conductor/archive/*" \
+  -exec bunx markdown-link-check --config .markdown-link-check.json --quiet {} + \
+  2>/dev/null
+
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "❌ Dead links detected!"
+  echo "Please fix the broken links before committing."
+  echo "Run 'bunx markdown-link-check --config .markdown-link-check.json <file>' to check individual files."
+  exit 1
+fi
+
+echo "✓ All links are valid"
