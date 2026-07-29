@@ -4,5 +4,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Add a pre-commit hook that checks for dead links**
+- [x] **Track: Add a pre-commit hook that checks for dead links**
 *Link: [./tracks/deadlink-check_20260728/](./tracks/deadlink-check_20260728/)*
