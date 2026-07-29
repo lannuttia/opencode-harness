@@ -21,6 +21,8 @@ export class ArchitectureReviewer implements IArchitectureReviewer {
 
   /**
    * Register a specialized reviewer
+   * 
+   * @param reviewer - The specialized reviewer to register
    */
   registerReviewer(reviewer: SpecializedReviewer): void {
     this.reviewers.push(reviewer);
@@ -87,6 +89,8 @@ export class ArchitectureReviewer implements IArchitectureReviewer {
 
   /**
    * Get all registered reviewers
+   * 
+   * @returns Array of all registered specialized reviewers
    */
   getReviewers(): SpecializedReviewer[] {
     return [...this.reviewers];
@@ -94,6 +98,7 @@ export class ArchitectureReviewer implements IArchitectureReviewer {
 
   /**
    * Clear all registered reviewers
+   * Removes all specialized reviewers from the registry
    */
   clearReviewers(): void {
     this.reviewers = [];

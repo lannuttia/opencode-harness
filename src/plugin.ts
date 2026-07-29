@@ -48,21 +48,35 @@ export const HarnessPlugin: Plugin = async (input: PluginInput) => {
 
       if (isReviewCommand) {
         try {
+          // TODO: Use OpenCode plugin logger instead of console for --quiet/--json mode support
           console.log('\n🔍 Running architecture review...');
 
           // Load project context
           const projectContext = await contextLoader.load();
 
+          // Extract git diff for the review scope
+          const { execSync } = await import('child_process');
+          let diff = '';
+          let files: string[] = [];
+
+          try {
+            // Review uncommitted changes (default behavior)
+            // TODO: Extract specific scope from conductor review context when available
+            diff = execSync('git diff HEAD', { encoding: 'utf-8', cwd: input.directory });
+            const filesOutput = execSync('git diff --name-only HEAD', { encoding: 'utf-8', cwd: input.directory });
+            files = filesOutput.split('\n').filter(Boolean);
+          } catch (error) {
+            console.warn('⚠️  Failed to extract git diff, reviewing with empty diff:', error);
+          }
+
           // Create review context
-          // Note: In a full implementation, we'd extract git diff from the review scope
-          // For now, we provide minimal context to enable the reviewer to run
           const context = {
             scope: { type: 'current' as const },
             projectContext,
             changes: {
-              diff: '',
-              files: [],
-              stats: { additions: 0, deletions: 0, total: 0 },
+              diff,
+              files,
+              stats: { additions: 0, deletions: 0, total: files.length },
             },
           };
 

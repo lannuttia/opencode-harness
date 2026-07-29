@@ -41,7 +41,7 @@
   },
   "homepage": "https://github.com/lannuttia/opencode-harness#readme",
   "dependencies": {
-    "@opencode-ai/plugin": "1.0.223",
+    "@opencode-ai/plugin": "^1.18.9",
     "opencode-workspace": "github:kdcokenny/opencode-workspace",
     "opencode-conductor-plugin": "^1.32.0"
   },
